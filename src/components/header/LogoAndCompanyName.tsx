@@ -8,7 +8,7 @@ const LogoAndCompanyName = () => {
       aria-label="TechCorp — go to home"
     >
       <ZapLogo />
-      <p className="hidden sm:block font-semibold text-gray-900 tracking-tight text-">
+      <p className="hidden sm:block font-semibold text-xl text-gray-900 tracking-tight text-">
         TechCorp
       </p>
     </a>
