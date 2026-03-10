@@ -9,7 +9,7 @@ const DesktopNav = () => {
             <li key={key}>
               <a
                 href={item.path}
-                className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150 "
+                className="flex items-center gap-1.5 rounded-lg px-2 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150 "
               >
                 {item.label}
               </a>
