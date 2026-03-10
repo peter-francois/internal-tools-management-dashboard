@@ -6,6 +6,7 @@ import SearchBar from "./SearchBar";
 import { useState } from "react";
 import DarkModeToggle from "./DarkModeToggle";
 import NotificationBell from "./NotificationBell";
+import SettingsButton from "./SettingsButton";
 
 const Header = () => {
   const { pathname } = useLocation();
@@ -29,6 +30,7 @@ const Header = () => {
         <SearchBar placeholder={currentNav?.placeholder ?? "Search…"} onSearch={onSearch} />
         <DarkModeToggle isDarkMode={darkMode} onToggle={onToggleDarkMode} />
         <NotificationBell />
+        <SettingsButton />
       </div>
     </header>
   );
