@@ -7,7 +7,7 @@ import { useState } from "react";
 import DarkModeToggle from "./DarkModeToggle";
 import NotificationBell from "./NotificationBell";
 import SettingsButton from "./SettingsButton";
-import Avatar from "./Avatar";
+import UserMenuButton from "./UserMenuButton";
 
 const Header = () => {
   const { pathname } = useLocation();
@@ -32,7 +32,7 @@ const Header = () => {
         <DarkModeToggle isDarkMode={darkMode} onToggle={onToggleDarkMode} />
         <NotificationBell />
         <SettingsButton />
-        <Avatar />
+        <UserMenuButton />
       </div>
     </header>
   );
