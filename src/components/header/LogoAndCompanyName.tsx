@@ -4,11 +4,11 @@ const LogoAndCompanyName = () => {
   return (
     <a
       href={NAV_ITEMS.dashboard.path}
-      className="flex items-center gap-2 shrink-0"
+      className="flex items-center gap-3 shrink-0 mr-2.5"
       aria-label="TechCorp — go to home"
     >
       <ZapLogo />
-      <p className="hidden sm:block font-semibold text-gray-900 tracking-tight text-[15px]">
+      <p className="hidden sm:block font-semibold text-gray-900 tracking-tight text-">
         TechCorp
       </p>
     </a>
