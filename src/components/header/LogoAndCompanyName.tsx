@@ -1,4 +1,4 @@
-import { NAV_ITEMS } from "../../contants/navigation";
+import { NAV_ITEMS } from "../../types/contants/navigation";
 import ZapLogo from "./ZapLogo";
 const LogoAndCompanyName = () => {
   return (
