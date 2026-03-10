@@ -5,6 +5,7 @@ import LogoAndCompanyName from "./LogoAndCompanyName";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 import DarkModeToggle from "./DarkModeToggle";
+import NotificationBell from "./NotificationBell";
 
 const Header = () => {
   const { pathname } = useLocation();
@@ -27,6 +28,7 @@ const Header = () => {
         <div className="flex-1" />
         <SearchBar placeholder={currentNav?.placeholder ?? "Search…"} onSearch={onSearch} />
         <DarkModeToggle isDarkMode={darkMode} onToggle={onToggleDarkMode} />
+        <NotificationBell />
       </div>
     </header>
   );
