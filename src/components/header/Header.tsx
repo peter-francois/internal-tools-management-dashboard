@@ -8,6 +8,7 @@ import DarkModeToggle from "./DarkModeToggle";
 import NotificationBell from "./NotificationBell";
 import SettingsButton from "./SettingsButton";
 import UserMenuButton from "./UserMenuButton";
+import HamburgerMenu from "./HamburgerMenu";
 
 const Header = () => {
   const { pathname } = useLocation();
@@ -24,7 +25,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 w-full z-40 border-b border-gray-200 bg-white/90">
-      <div className="mx-auto flex h-16 items-center gap-4 px-8">
+      <div className="mx-auto flex h-16 items-center gap-2 lg:gap-4 px-8">
         <LogoAndCompanyName />
         <DesktopNav />
         <div className="flex-1" />
@@ -33,6 +34,7 @@ const Header = () => {
         <NotificationBell />
         <SettingsButton />
         <UserMenuButton />
+        <HamburgerMenu />
       </div>
     </header>
   );
