@@ -1,4 +1,4 @@
-export default function Badge() {
+export default function DotBadge() {
   return (
     <span
       aria-hidden="true"
