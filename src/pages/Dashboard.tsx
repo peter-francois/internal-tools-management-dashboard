@@ -1,8 +1,10 @@
+import { NAV_ITEMS } from "../types/contants/navigation";
+
 const Dashboard = () => {
   return (
     <>
-      <h1>Internal Tools Dashboard</h1>
-      <p>Monitor and manage your organization's software tools and expenses</p>
+      <h1>{NAV_ITEMS.dashboard.title}</h1>
+      <p>{NAV_ITEMS.dashboard.description}</p>
     </>
   );
 };
