@@ -6,7 +6,7 @@ const NotificationBell = () => {
     <button
       type="button"
       aria-label="Notifications"
-      className="relative flex h-9 w-9 items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors"
+      className="relative flex h-9 w-9 items-center justify-center rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
     >
       <Bell size={18} aria-hidden="true" />
       <Badge />
