@@ -5,27 +5,27 @@
 
 body {
   font-family: "Inter";
-  @apply bg-white dark:bg-gray-950 text-gray-900 dark:text-white;
+  @apply bg-white dark:bg-neutral-950 text-neutral-900 dark:text-white;
 }
 
 @layer base {
   h1 {
-    @apply text-3xl font-bold text-gray-900 dark:text-white;
+    @apply text-3xl font-bold text-neutral-900 dark:text-white;
   }
   h2 {
-    @apply text-xl font-semibold text-gray-800 dark:text-gray-100;
+    @apply text-xl font-semibold text-neutral-800 dark:text-neutral-100;
   }
   p {
-    @apply text-sm text-gray-500 dark:text-gray-400;
+    @apply text-sm text-neutral-500 dark:text-neutral-400;
   }
   a {
-    @apply text-gray-600 dark:text-gray-300;
+    @apply text-neutral-600 dark:text-neutral-300;
   }
   button {
-    @apply text-gray-500 hover:bg-gray-100 hover:text-gray-800 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200;
+    @apply text-neutral-500 hover:bg-neutral-100 hover:text-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-200;
   }
   input {
-    @apply border border-gray-200 bg-gray-50 text-gray-700 placeholder-gray-400
-  dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:placeholder-gray-500;
+    @apply border border-neutral-200 bg-neutral-50 text-neutral-700 placeholder-neutral-400
+  dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200 dark:placeholder-neutral-500;
   }
 }
