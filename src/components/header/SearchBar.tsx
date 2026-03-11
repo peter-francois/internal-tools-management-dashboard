@@ -13,7 +13,7 @@ const SearchBar = ({ placeholder, onSearch }: SearchBarProps) => {
     if (value.trim()) onSearch(value.trim());
   }
   return (
-    <form role="search" onSubmit={handleSubmit} className="relative hidden md:flex items-center">
+    <form role="search" onSubmit={handleSubmit} className="relative hidden sm:flex items-center">
       <label htmlFor="global-search" className="sr-only">
         {placeholder}
       </label>

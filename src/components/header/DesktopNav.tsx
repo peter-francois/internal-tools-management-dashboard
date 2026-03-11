@@ -3,7 +3,7 @@ import { NAV_ITEMS } from "../../types/contants/navigation";
 
 const DesktopNav = () => {
   return (
-    <nav aria-label="Main navigation" className="hidden md:block">
+    <nav aria-label="Main navigation" className="hidden lg:flex">
       <ul role="list" className="flex items-center gap-1">
         {Object.entries(NAV_ITEMS).map(([key, item]) => {
           return (
