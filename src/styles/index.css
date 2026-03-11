@@ -19,22 +19,22 @@ body {
 
 @layer base {
   h1 {
-    @apply text-3xl font-bold text-neutral-900 dark:text-white mb-1;
+    @apply text-xl sm:text-3xl font-bold text-neutral-900 dark:text-white mb-1;
   }
   h2 {
-    @apply text-xl font-semibold text-neutral-800 dark:text-neutral-100;
+    @apply text-lg sm:text-xl font-semibold text-neutral-800 dark:text-neutral-100;
   }
   p {
-    @apply text-sm text-neutral-500 dark:text-neutral-400;
+    @apply text-xs sm:text-sm text-neutral-500 dark:text-neutral-400;
   }
   a {
-    @apply text-neutral-600 dark:text-neutral-300;
+    @apply text-xs sm:text-sm text-neutral-600 dark:text-neutral-300;
   }
   button {
-    @apply text-neutral-500 hover:bg-neutral-100 hover:text-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-200;
+    @apply text-xs sm:text-sm text-neutral-500 hover:bg-neutral-100 hover:text-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 min-h-[44px] sm:min-h-0;;
   }
   input {
-    @apply border border-neutral-200 bg-neutral-50 text-neutral-700 placeholder-neutral-400
+    @apply text-xs sm:text-sm border border-neutral-200 bg-neutral-50 text-neutral-700 placeholder-neutral-400
   dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200 dark:placeholder-neutral-500;
   }
 }
