@@ -5,6 +5,7 @@ import AppLayout from "./layouts/AppLayout";
 import Tools from "./pages/Tools";
 import Analytics from "./pages/Analytics";
 import Settings from "./pages/Settings";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path={NAV_ITEMS.tools.path} element={<Tools />} />
           <Route path={NAV_ITEMS.analytics.path} element={<Analytics />} />
           <Route path={NAV_ITEMS.settings.path} element={<Settings />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>
