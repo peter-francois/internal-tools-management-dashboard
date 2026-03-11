@@ -20,7 +20,7 @@ const Header = () => {
 
 
   return (
-    <header className="sticky top-0 w-full z-40 border-b border-gray-200 bg-white/90 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-950/90">
+    <header className="sticky top-0 w-full z-40 border-b border-neutral-200 bg-white/90 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-950/90">
       <div className="mx-auto flex h-16 items-center gap-2 lg:gap-4 px-8">
         <LogoAndCompanyName />
         <DesktopNav />
