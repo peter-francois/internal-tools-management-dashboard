@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { NAV_ITEMS } from "../../types/contants/navigation";
 
 const DesktopNav = () => {
@@ -7,12 +8,16 @@ const DesktopNav = () => {
         {Object.entries(NAV_ITEMS).map(([key, item]) => {
           return (
             <li key={key}>
-              <a
-                href={item.path}
-                className="flex items-center gap-1.5 rounded-lg px-2 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors duration-150 "
-              >
-                {item.label}
-              </a>
+              <NavLink
+                to={item.path}
+                className={({ isActive }) =>
+                  `flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                    isActive
+                      ? "bg-indigo-50 text-indigo-600 "
+                      : "text-gray-500 hover:bg-gray-100 hover:text-gray-800"
+                  }`
+                }
+              >{item.label}</NavLink>
             </li>
           );
         })}
