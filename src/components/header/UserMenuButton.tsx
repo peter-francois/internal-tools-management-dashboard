@@ -1,5 +1,5 @@
 import { ChevronDown } from "lucide-react";
-import Avatar from "./Avatar";
+import Avatar from "../ui/Avatar";
 
 const UserMenuButton = () => {
     return (
