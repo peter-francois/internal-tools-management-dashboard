@@ -10,7 +10,7 @@ export default function App() {
       <Routes>
         <Route path={NAV_ITEMS.dashboard.path} element={<AppLayout />}>
           <Route index element={<Dashboard />} />
-          <Route index element={<Tools />} />          
+          <Route path={NAV_ITEMS.tools.path} element={<Tools />} />
         </Route>
       </Routes>
     </>
