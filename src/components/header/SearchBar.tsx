@@ -27,10 +27,9 @@ const SearchBar = ({ placeholder, onSearch }: SearchBarProps) => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder={placeholder}
-        className="w-56 xl:w-72 rounded-lg border border-gray-200 bg-white
-          py-2 pl-9 pr-3 text-sm text-gray-700 placeholder-gray-400
-          transition-all duration-200
-          focus:w-65 xl:focus:w-96 focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-100
+        className="w-32 sm:w-40 lg:w-52 xl:w-72 rounded-lg border border-gray-200 
+        bg-gray-50 py-2 pl-9 pr-3 text-sm focus:outline-none focus:border-indigo-400 
+        focus:ring-2 focus:ring-indigo-100 xl:focus:w-96
           "
       ></input>
     </form>
