@@ -21,7 +21,7 @@ export default function StatCard({
       <div className="flex items-center justify-between mb-8">
         <p>{label}</p>
         <span
-          className={`flex h-9 w-9 items-center justify-center rounded-lg text-white ${iconBg}`}
+          className={`flex h-8 w-8 items-center justify-center rounded-lg text-white ${iconBg}`}
         >
           {icon}
         </span>
