@@ -1,5 +1,6 @@
 import type { StatCardProps } from "../../types/interfaces/statCard";
 import { gradient } from "../../utils/gradients";
+import Badge from "./Badge";
 
 export default function StatCard({
   label,
@@ -36,11 +37,7 @@ export default function StatCard({
         )}
       </div>
 
-      <span
-        className={`inline-flex items-center rounded-full px-2 py-1.5 text-xs text-white ${trendClass}`}
-      >
-        {trend}
-      </span>
+      <Badge label={trend} trendClass={trendClass} />
     </article>
   );
 }
