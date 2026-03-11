@@ -1,6 +1,19 @@
 @import "tailwindcss";
 @import "@fontsource/inter";
+@import "@fontsource/inter/700.css";
 
 body {
   font-family: "Inter";
+}
+
+@layer base {
+  h1 {
+    @apply text-3xl font-bold;
+  }
+  h2 {
+    @apply text-xl font-semibold;
+  }
+  p {
+    @apply text-sm text-gray-500;
+  }
 }
