@@ -1,4 +1,4 @@
-import type { StatCardProps } from "../../types/statCard";
+import type { StatCardProps } from "../../types/interfaces/statCard";
 import { gradient } from "../../utils/gradients";
 
 export default function StatCard({
