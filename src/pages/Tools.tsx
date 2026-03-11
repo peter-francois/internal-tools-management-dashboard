@@ -1,8 +1,10 @@
+import { NAV_ITEMS } from "../types/contants/navigation";
+
 const Tools = () => {
   return (
     <>
-      <h1>Tools</h1>
-      <p>Manage and monitor all your organization's software tools</p>
+      <h1>{NAV_ITEMS.tools.title}</h1>
+      <p>{NAV_ITEMS.tools.description}</p>
     </>
   );
 };
