@@ -18,7 +18,7 @@ export default function StatCard({
     trendVariant === "positive" ? gradient(fromColor, viaColor, toColor, "r") : trendNegativeBg;
   return (
     <article className="rounded-2xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-8">
         <p>{label}</p>
         <span
           className={`flex h-9 w-9 items-center justify-center rounded-lg text-white ${iconBg}`}
@@ -27,7 +27,7 @@ export default function StatCard({
         </span>
       </div>
 
-      <div className="mb-3">
+      <div className="mb-2">
         <span className="text-2xl font-bold text-neutral-900 dark:text-white">{value}</span>
         {valueSecondary && (
           <span className="text-2xl font-bold text-neutral-400 dark:text-neutral-500">
