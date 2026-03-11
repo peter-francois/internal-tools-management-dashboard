@@ -1,5 +1,5 @@
 import { Bell } from "lucide-react";
-import DotBadge from "../ui/DotBadge";
+import DotBadge from "./DotBadge";
 
 const NotificationBell = () => {
   return (
