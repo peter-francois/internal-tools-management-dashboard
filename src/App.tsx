@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
-import { NAV_ITEMS } from "./types/contants/navigation";
 import AppLayout from "./layouts/AppLayout";
 import Tools from "./pages/Tools";
 import Analytics from "./pages/Analytics";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
+import { NAV_ITEMS } from "./types/contants/navigation.constant";
 
 export default function App() {
   return (

@@ -1,5 +1,4 @@
 import { useLocation } from "react-router-dom";
-import { NAV_ITEMS } from "../../types/contants/navigation";
 import DesktopNav from "./DesktopNav";
 import LogoAndCompanyName from "./LogoAndCompanyName";
 import SearchBar from "./SearchBar";
@@ -8,6 +7,7 @@ import NotificationBell from "./NotificationBell";
 import SettingsButton from "./SettingsButton";
 import UserMenuButton from "./UserMenuButton";
 import HamburgerMenu from "./HamburgerMenu";
+import { NAV_ITEMS } from "../../types/contants/navigation.constant";
 
 const Header = () => {
   const { pathname } = useLocation();

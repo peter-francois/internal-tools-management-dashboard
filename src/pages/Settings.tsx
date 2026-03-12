@@ -1,4 +1,4 @@
-import { NAV_ITEMS } from "../types/contants/navigation";
+import { NAV_ITEMS } from "../types/contants/navigation.constant";
 
 const Settings = () => {
   return (

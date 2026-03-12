@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { TOOLS_MOCK } from "../../data/tools";
-import type { SortField, SortDir } from "../../types/interfaces/tool";
+
 import ToolsTableHeader from "./ToolsTableHeader";
 import ToolsTableHead from "./ToolsTableHead";
 import ToolsTableRow from "./ToolTableRow";
+import type { SortDir, SortField } from "../../types/interfaces/tool.interface";
+import { TOOLS_MOCK } from "../../data/tools.mock";
 
 export default function RecentToolsTable() {
   const [sortField, setSortField] = useState<SortField | null>(null);

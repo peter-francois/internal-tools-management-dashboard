@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { NAV_ITEMS } from "../types/contants/navigation";
-import { NOT_FOUND } from "../types/contants/ui";
+import { NOT_FOUND } from "../types/contants/ui.constant";
+import { NAV_ITEMS } from "../types/contants/navigation.constant";
+
 
 export default function NotFound() {
   const navigate = useNavigate();

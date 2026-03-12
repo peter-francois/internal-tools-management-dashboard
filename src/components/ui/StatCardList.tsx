@@ -1,5 +1,6 @@
-import { STAT_CARDS_MOCK } from "../../data/statCard";
-import { STAT_CARDS_VISUAL } from "../../types/contants/statCards";
+
+import { STAT_CARDS_MOCK } from "../../data/statCard.mock";
+import { STAT_CARDS_VISUAL } from "../../types/contants/statCards.constant";
 import StatCard from "./StatCard";
 
 const StatCardList = () => {

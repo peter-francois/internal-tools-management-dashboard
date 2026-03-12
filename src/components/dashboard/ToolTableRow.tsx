@@ -1,5 +1,6 @@
-import { TOOL_STATUS } from "../../types/contants/tool";
-import type { Tool } from "../../types/interfaces/tool";
+import { TOOL_STATUS } from "../../types/contants/tool.constant";
+import type { Tool } from "../../types/interfaces/tool.interface";
+
 
 interface ToolsTableRowProps {
   tool: Tool;

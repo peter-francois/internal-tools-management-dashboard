@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { NAV_ITEMS } from "../../types/contants/navigation";
 import { Settings } from "lucide-react";
+import { NAV_ITEMS } from "../../types/contants/navigation.constant";
 
 function SettingsButton() {
   return (
