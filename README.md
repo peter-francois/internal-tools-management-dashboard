@@ -192,9 +192,6 @@ Commandes
 # Builder l'image
 docker build --build-arg VITE_API_BASE_URL=https://api.monsite.com -t internal-tools-management-dashboard .
 
-# Lancer le conteneur
-docker run -d -p 80:80 internal-tools-management-dashboard
-
 # Avec Docker Compose
 docker-compose up -d
 
