@@ -1,15 +1,17 @@
-import { Route, Routes } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
-import AppLayout from "./layouts/AppLayout";
-import Tools from "./pages/Tools";
-import Analytics from "./pages/Analytics";
-import Settings from "./pages/Settings";
-import NotFound from "./pages/NotFound";
+import { Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import { NAV_ITEMS } from "./types/contants/navigation.constant";
+
+const AppLayout = lazy(() => import("./layouts/AppLayout"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Tools = lazy(() => import("./pages/Tools"));
+const Analytics = lazy(() => import("./pages/Analytics"));
+const Settings = lazy(() => import("./pages/Settings"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 export default function App() {
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path={NAV_ITEMS.dashboard.path} element={<AppLayout />}>
           <Route index element={<Dashboard />} />
@@ -19,6 +21,6 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </>
+    </Suspense>
   );
 }
