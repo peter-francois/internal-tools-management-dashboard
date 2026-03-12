@@ -15,7 +15,10 @@ export default function HamburgerMenu() {
         aria-expanded={open}
         aria-controls="mobile-menu"
         onClick={() => setOpen((v) => !v)}
-        className="flex lg:hidden h-9 w-9 items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+        className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-500
+          transition-colors hover:bg-gray-100 hover:text-gray-700 focus-visible:ring-2
+          focus-visible:ring-indigo-400 focus-visible:outline-none lg:hidden dark:text-gray-400
+          dark:hover:bg-gray-800 dark:hover:text-gray-200"
       >
         {open ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
       </button>
@@ -24,9 +27,10 @@ export default function HamburgerMenu() {
         <nav
           id="mobile-menu"
           aria-label="Mobile navigation"
-          className="absolute top-16 left-0 right-0 border-b border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950"
+          className="absolute top-16 right-0 left-0 border-b border-gray-200 bg-white
+            dark:border-gray-800 dark:bg-gray-950"
         >
-          <ul role="list" className="flex gap-1 flex-col px-4 py-2">
+          <ul role="list" className="flex flex-col gap-1 px-4 py-2">
             {Object.entries(NAV_ITEMS).map(([key, item]) => (
               <li key={key}>
                 <NavLink

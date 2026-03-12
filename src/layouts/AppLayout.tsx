@@ -14,7 +14,7 @@ export default function AppLayout() {
         .dark { --grid: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px); }
       `}</style>
       <Header />
-      <main className="max-w-7xl mx-auto px-8 py-8">
+      <main className="mx-auto max-w-7xl px-8 py-8">
         <Outlet />
       </main>
     </div>
