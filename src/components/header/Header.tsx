@@ -24,7 +24,10 @@ const Header = () => {
       <div className="mx-auto flex h-16 items-center gap-2 lg:gap-4 px-8">
         <LogoAndCompanyName />
         <DesktopNav />
+
+        {/* Separator */}
         <div className="flex-1" />
+        
         <SearchBar placeholder={currentNav?.placeholder ?? "Search…"} onSearch={onSearch} />
         <DarkModeToggle />
         <NotificationBell />
