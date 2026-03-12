@@ -32,5 +32,5 @@ export interface ToolsQueryParams {
   _limit?: number;
   _page?: number;
   _embed?: "user_tools";
-  status: ToolStatus;
+  status?: ToolStatus;
 }
