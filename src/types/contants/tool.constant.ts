@@ -25,8 +25,8 @@ export type ToolStatus = keyof typeof TOOL_STATUS;
 
 export const COLUMNS: { label: string; field: SortField }[] = [
   { label: "Tool", field: "name" },
-  { label: "Department", field: "department" },
-  { label: "Users", field: "users" },
-  { label: "Monthly Cost", field: "monthlyCost" },
+  { label: "Department", field: "owner_department" },
+  { label: "Users", field: "active_users_count" },
+  { label: "Monthly Cost", field: "monthly_cost" },
   { label: "Status", field: "status" },
 ] as const;
