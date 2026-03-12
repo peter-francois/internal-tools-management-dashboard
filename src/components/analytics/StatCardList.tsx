@@ -5,7 +5,7 @@ import {
 } from "../../hooks/useAnaliticsService";
 import { ERROR_PAGES } from "../../types/contants/errorPages.constant";
 import { mapAnaliticsToStatCards } from "../../utils/mapAnaliticsToStatCards";
-import ErrorPage from "./ErrorPage";
+import ErrorPage from "../ui/ErrorPage";
 import StatCard from "./StatCard";
 
 const StatCardList = () => {

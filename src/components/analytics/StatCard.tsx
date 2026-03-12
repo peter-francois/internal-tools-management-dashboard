@@ -1,6 +1,6 @@
 import type { StatCardProps } from "../../types/interfaces/statCard.interface";
 import { gradient } from "../../utils/gradients";
-import Badge from "./Badge";
+import Badge from "../ui/Badge";
 
 export default function StatCard({
   label,
