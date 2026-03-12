@@ -31,10 +31,30 @@ body {
     @apply text-xs sm:text-sm text-neutral-600 dark:text-neutral-300;
   }
   button {
-    @apply text-xs sm:text-sm text-neutral-500 hover:bg-neutral-100 hover:text-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 min-h-11 sm:min-h-0;;
+    @apply text-xs sm:text-sm text-neutral-500 hover:bg-neutral-100 hover:text-neutral-800 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 min-h-11 sm:min-h-0;
   }
   input {
     @apply text-xs sm:text-sm border border-neutral-200 bg-neutral-50 text-neutral-700 placeholder-neutral-400
-  dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200 dark:placeholder-neutral-500;
+  dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200 dark:placeholder-neutral-500  min-h-11 sm:min-h-0;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply min-h-11 lg:min-h-0 inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors
+           text-gray-600 hover:bg-gray-100 hover:text-gray-800
+           dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200;
+  }
+
+  .nav-link-active {
+    @apply bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400;
+  }
+
+  .nav-link-mobile {
+    @apply w-full;
+  }
+
+  .link {
+    @apply min-h-11 lg:min-h-0 inline-flex items-center;
   }
 }
