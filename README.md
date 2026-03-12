@@ -1,52 +1,178 @@
 # Internal Tools Management Dashboard
 
-> Application React/TypeScript — projet en cours de développement
+> Dashboard SaaS React/TypeScript pour gérer les outils internes, les budgets et l'utilisation par équipe.
 
 ---
 
-## Stack technique
+## 🚀 Quick Start
 
-| Outil                 | Rôle                       |
-| --------------------- | -------------------------- |
-| **React**             | Framework UI               |
-| **TypeScript**        | Typage statique            |
-| **Tailwind CSS**      | Styles utilitaires         |
-| **Lucide React**      | Bibliothèque d'icônes      |
-| **@fontsource/inter** | Police Inter (self-hosted) |
+```bash
+# Installer les dépendances
+npm install
+
+# Copier et configurer les variables d'environnement
+cp .env.example .env
+
+# Démarrer le serveur de développement
+npm run dev
+```
 
 ---
 
-## 📁 Structure prévue
+## 🏗️ Architecture
 
 ```
 src/
-├── pages/
-│   ├── Dashboard/
-│   ├── Tools/
-│   └── Analytics/
+├── api/                  # Appels Axios (un fichier par ressource)
 ├── components/
-├── hooks/
-└── types/
+│   ├── dashboard/        # Composants spécifiques au Dashboard
+│   ├── tools/            # Composants de la page Tools
+│   ├── analytics/        # Composants de la page Analytics
+│   └── ui/               # Composants partagés (StatCard, Badge, ErrorPage…)
+├── hooks/                # Hooks React Query (useTools, useAnalytics…)
+├── layouts/              # AppLayout
+├── pages/                # Composants de niveau route
+│   ├── Analytics/
+│   ├── Dashboard/
+│   ├── NotFound/
+│   ├── Settings/
+│   └── Tools/
+├── stores/               # useDarkMode Store
+├── styles/               # index.css
+├── types/
+│   ├── constants/        # NAV_ITEMS, ERROR_PAGES, TOOL_STATUS…
+│   └── interfaces/       # Interfaces TypeScript (Tool, User, Analytics…)
+├── utils/                # Fonctions pures + axiosClient, queryClient
+├── .env.example
+└── README.md
 ```
 
----
+**Conventions clés :**
 
-## 🗺️ Roadmap
-
-- [ ] Quick Start — installation et lancement en une commande
-- [ ] Architecture — structure projet sur 3 pages
-- [ ] Design System — construction et cohérence visuelle
-- [ ] Navigation & User Journey — flow Dashboard → Tools → Analytics
-- [ ] Data Integration — gestion des données (JSON server)
-- [ ] Responsive Design — approche mobile-first
-- [ ] Testing Strategy — tests unitaires et QA
-- [ ] Performance — optimisations pour une app 3 pages
-- [ ] Data Visualization — choix de la charts library
-- [ ] Next Steps — vision complète de l'app
+- Un fichier API par ressource (`tool.api.ts`, `analytics.api.ts`…)
+- Un hook par requête (`useTools`, `useActiveToolsCount`…)
+- Fonctions de mapping dans `utils/` pour transformer les données API en props de composants (DTO → ViewModel)
 
 ---
 
-## ⚠️ Statut
+## 🎨 Design System Evolution
 
-**Projet initialisé** — aucune feature implémentée pour l'instant.  
-Ce README sera mis à jour au fur et à mesure du développement.
+Construit progressivement :
+
+- **Jour 1** | Base : couleurs (accent indigo, gris neutres) et échelle typographique.
+- **Jour 2** | Dark mode via `darkMode: 'class'` Tailwind et bibliothèque de composants : `StatCard`, `Badge`, `ErrorPage`, `HamburgerMenu`.
+- **Jour 3** | Classe CSS `.nav-link`, `.nav-link-active` et `.nav-link-mobile` cohérente et composants pilotés par les données remplaçant les mocks, fond en grille, animations au hover
+
+**Décisions de design :**
+
+- Fond en grille dark mode (lignes `rgba(255,255,255,0.04)`, espacement 50px)
+- Système de dégradés pour les badges de statut et les icônes de stat cards
+- `@layer base` pour les styles globaux `h1`, `h2`, `p`, `button`, `input` — source unique de vérité
+
+---
+
+## 🔗 Navigation & User Journey
+
+```
+Dashboard → Tools → Analytics → Settings
+```
+
+- **Dashboard** — Vue KPI (budget, outils actifs, départements, coût/utilisateur) + tableau des outils récents
+- **Tools** — Reste à implémenter.
+- **Analytics** — Reste à implémenter.
+- **Settings** — Reste à implémenter.
+
+La navigation est gérée par React Router avec un `AppLayout` partagé (header sticky + `<Outlet />`).
+La route active est mise en évidence via `navLinkClass({ isActive })`.
+
+---
+
+## 📊 Data Integration Strategy
+
+Les données transitent depuis un **JSON Server** via :
+
+```
+JSON Server → Axios (api/) → React Query (hooks/) → Composants
+```
+
+- **`api/`** — fonctions de fetch typées avec params (`ToolsQueryParams`)
+- **`hooks/`** — wrappers React Query avec `staleTime` et `refetchInterval`
+- **`utils/mapAnalyticsToStatCards`** — transforme la réponse API `Analytics` en `StatCardProps[]`
+
+**Stratégie de cache :**
+| Donnée | staleTime | refetchInterval |
+|---|---|---|
+| Analytics | 2 min | 1 min |
+| Nombre d'outils actifs | 5 min | 2 min |
+| Nombre de départements | 10 min | 5 min |
+| Outils récents | 5 min | — |
+
+Le cache est persisté dans `localStorage` via `@tanstack/query-async-storage-persister`.
+
+---
+
+## 📱 Progressive Responsive Design
+
+Approche mobile-first avec les breakpoints Tailwind :
+
+- **Mobile (`< lg`)** — Menu hamburger, stat cards en colonne unique, liens de navigation pleine largeur avec tap targets `min-h-11`
+- **Tablette (`sm`)** — Grille stat cards en 2 colonnes
+- **Desktop (`lg+`)** — Navigation horizontale et grille 4 colonnes
+
+Les tap targets sont appliqués globalement via `.nav-link` et les styles de base `button` (`min-h-11 lg:min-h-0`).
+
+---
+
+## 🧪 Testing Strategy
+
+La sécurité des types est la couche QA principale :
+
+- **TypeScript** — interfaces strictes pour toutes les réponses API et props de composants
+- **`npm run build`** — vérification complète `tsc` avant tout déploiement
+- **`npm run lint`** — ESLint pour la qualité du code
+
+Les tests unitaires ne sont pas encore implémentés — la prochaine étape serait Jest Testing Library, axé sur les fonctions de mapping et la logique des hooks.
+
+---
+
+## ⚡ Performance Optimizations
+
+- **Cache React Query** — évite les requêtes redondantes lors des navigations entre pages
+- **Persistance `localStorage`** — le cache survit aux rechargements de page
+- **`select` dans React Query** — `useActiveToolsCount` et `useDepartmentsCount` calculent les compteurs via `select: (data) => data.length` sans fetcher des tableaux complets
+- **Code splitting** — lazy loading des pages avec React Router
+- **Tailwind CSS** — purgé en production, bundle CSS minimal
+
+---
+
+## 🎯 Design Consistency Approach
+
+Pour le dévelopement futur des autres pages sans maquettes, la cohérence a été assurée par :
+
+- **CSS `@layer base`** — styles globaux de typographie
+- **`@layer components`** — `.nav-link`, `.nav-link-active`, `.nav-link-mobile`, `.link`
+- **Constantes** — `STAT_CARDS_VISUAL`, `TOOL_STATUS`, `ERROR_PAGES`, `NAV_ITEMS` comme sources uniques de vérité
+- **Utilitaire gradient** — `gradient(fromColor, viaColor, toColor)` réutilisé sur les badges et icônes
+
+---
+
+## 📈 Data Visualization Philosophy
+
+La bibliothèque de charts n'est pas encore intégrée — les visualisations actuelles sont :
+
+- Stat cards avec badges de tendance (dégradé + pourcentage)
+- Tableau de données triable avec badges de statut
+
+Prochaine étape : **Recharts** — choisi pour son API React-native, sa composabilité et son intégration facile avec Tailwind.
+
+---
+
+## 🔮 Next Steps / Complete App Vision
+
+| Fonctionnalité                                | Priorité |
+| --------------------------------------------- | -------- |
+| CRUD tools (ajout, édition, suppression)      | Haute    |
+| Page de gestion des tools avec filtres        | Haute    |
+| Page analytics avec charts                    | Haute    |
+| Tests unitaires avec Jest sur mappers & hooks | Moyenne  |
+| Tests E2E avec Cypress                        | Moyenne  |
