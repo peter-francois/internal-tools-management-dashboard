@@ -9,3 +9,9 @@ export interface Tool {
   monthlyCost: number;
   status: ToolStatus;
 }
+
+export type SortField = keyof Pick<
+  Tool,
+  "name" | "department" | "users" | "monthlyCost" | "status"
+>;
+export type SortDir = "asc" | "desc";
