@@ -26,10 +26,14 @@ export default function HamburgerMenu() {
           aria-label="Mobile navigation"
           className="absolute top-16 left-0 right-0 border-b border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950"
         >
-          <ul role="list" className="px-4 py-2">
+          <ul role="list" className="flex gap-1 flex-col px-4 py-2">
             {Object.entries(NAV_ITEMS).map(([key, item]) => (
               <li key={key}>
-                <NavLink to={item.path} onClick={() => setOpen(false)} className={navLinkClass}>
+                <NavLink
+                  to={item.path}
+                  onClick={() => setOpen(false)}
+                  className={({ isActive }) => navLinkClass({ isActive, mobile: true })}
+                >
                   {item.label}
                 </NavLink>
               </li>

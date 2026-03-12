@@ -5,7 +5,7 @@ const LogoAndCompanyName = () => {
   return (
     <NavLink
       to={NAV_ITEMS.dashboard.path}
-      className="flex items-center gap-3 shrink-0 mr-2.5"
+      className="link gap-3 shrink-0 mr-2.5"
       aria-label="TechCorp — go to home"
     >
       <ZapLogo />
