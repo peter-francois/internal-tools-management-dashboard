@@ -19,12 +19,16 @@ export default function RecentToolsTable() {
 
   const sorted = [...TOOLS_MOCK].sort((a, b) => {
     if (!sortField) return 0;
-    const va = a[sortField], vb = b[sortField];
+    const va = a[sortField],
+      vb = b[sortField];
     return sortDir === "asc" ? (va > vb ? 1 : -1) : va < vb ? 1 : -1;
   });
 
   return (
-    <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm dark:border-neutral-800 dark:bg-neutral-950">
+    <div
+      className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm dark:border-neutral-800
+        dark:bg-neutral-950"
+    >
       <ToolsTableHeader />
       <table className="w-full">
         <ToolsTableHead sortField={sortField} sortDir={sortDir} onSort={handleSort} />
