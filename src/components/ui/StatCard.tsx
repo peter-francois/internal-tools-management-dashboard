@@ -8,17 +8,18 @@ export default function StatCard({
   value,
   valueSecondary,
   trend,
-  trendVariant,
   fromColor,
   viaColor,
   toColor,
 }: StatCardProps) {
   const iconBg = gradient(fromColor, viaColor, toColor);
-  const trendNegativeBg = "bg-rose-600 text-white dark:bg-red-900/30 dark:text-red-400";
-  const trendClass =
-    trendVariant === "positive" ? gradient(fromColor, viaColor, toColor, "r") : trendNegativeBg;
+  const trendClass = gradient(fromColor, viaColor, toColor, "r");
   return (
-    <article className="rounded-2xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950">
+    <article
+      className="rounded-2xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950
+  transition-all duration-200 hover:shadow-md hover:-translate-y-0.5
+  dark:hover:border-neutral-700 hover:border-neutral-300"
+    >
       <div className="flex items-center justify-between mb-8">
         <p>{label}</p>
         <span
