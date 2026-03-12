@@ -1,3 +1,4 @@
+import RecentToolsTable from "../components/dashboard/RecentToolsTable";
 import StatCardList from "../components/ui/StatCardList";
 import { NAV_ITEMS } from "../types/contants/navigation";
 
@@ -8,6 +9,7 @@ const Dashboard = () => {
       <p>{NAV_ITEMS.dashboard.description}</p>
 
       <StatCardList />
+      <RecentToolsTable/>
     </>
   );
 };

@@ -1,3 +1,4 @@
+import ToolsTableHead from "./ToolsTableHead";
 import ToolsTableHeader from "./ToolsTableHeader";
 
 export default function RecentToolsTable() {
@@ -7,6 +8,7 @@ export default function RecentToolsTable() {
         dark:bg-neutral-950"
     >
       <ToolsTableHeader />
+      <ToolsTableHead sortField={null} sortDir="asc" onSort={() => {}} />
     </div>
   );
 }
