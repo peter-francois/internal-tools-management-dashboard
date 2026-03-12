@@ -5,11 +5,14 @@ import { NAV_ITEMS } from "../types/contants/navigation";
 const Dashboard = () => {
   return (
     <>
-      <h1>{NAV_ITEMS.dashboard.title}</h1>
-      <p>{NAV_ITEMS.dashboard.description}</p>
-
-      <StatCardList />
-      <RecentToolsTable/>
+      <div className="mb-2">
+        <h1>{NAV_ITEMS.dashboard.title}</h1>
+        <p>{NAV_ITEMS.dashboard.description}</p>
+      </div>
+      <div className="flex flex-col gap-8">
+        <StatCardList />
+        <RecentToolsTable />
+      </div>
     </>
   );
 };
