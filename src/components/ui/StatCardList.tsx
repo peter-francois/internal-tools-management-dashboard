@@ -4,7 +4,7 @@ import StatCard from "./StatCard";
 
 const StatCardList = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-6">
+    <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {Object.keys(STAT_CARDS_VISUAL).map((key) => (
         <StatCard
           key={key}

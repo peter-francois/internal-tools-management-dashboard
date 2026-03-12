@@ -16,11 +16,11 @@ export default function StatCard({
   const trendClass = gradient(fromColor, viaColor, toColor, "r");
   return (
     <article
-      className="rounded-2xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950
-  transition-all duration-200 hover:shadow-md hover:-translate-y-0.5
-  dark:hover:border-neutral-700 hover:border-neutral-300"
+      className="rounded-2xl border border-neutral-200 bg-white p-5 transition-all duration-200
+        hover:-translate-y-0.5 hover:border-neutral-300 hover:shadow-md dark:border-neutral-800
+        dark:bg-neutral-950 dark:hover:border-neutral-700"
     >
-      <div className="flex items-center justify-between mb-8">
+      <div className="mb-8 flex items-center justify-between">
         <p>{label}</p>
         <span
           className={`flex h-8 w-8 items-center justify-center rounded-lg text-white ${iconBg}`}

@@ -6,8 +6,8 @@ export default function NotFound() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center px-6 text-center gap-10 mt-10">
-      <p className="text-[6rem] sm:text-[10rem] font-black leading-none select-none">
+    <div className="mt-10 flex flex-col items-center gap-10 px-6 text-center">
+      <p className="text-[6rem] leading-none font-black select-none sm:text-[10rem]">
         {NOT_FOUND.code}
       </p>
 
@@ -19,7 +19,8 @@ export default function NotFound() {
       <button
         type="button"
         onClick={() => navigate(NAV_ITEMS.dashboard.path)}
-        className="flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 transition-colors"
+        className="flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium
+          text-white transition-colors hover:bg-indigo-700"
       >
         {NOT_FOUND.backToDashboard}
       </button>
