@@ -1,8 +1,12 @@
 import RecentToolsTable from "../components/dashboard/RecentToolsTable";
 import StatCardList from "../components/ui/StatCardList";
+import { useTools } from "../hooks/useToolService";
 import { NAV_ITEMS } from "../types/contants/navigation.constant";
 
 const Dashboard = () => {
+  const { data, isLoading } = useTools();
+  console.log("🚀 ~ Dashboard.tsx:9 ~ Dashboard ~ data:", data);
+
   return (
     <>
       <div className="mb-2">
