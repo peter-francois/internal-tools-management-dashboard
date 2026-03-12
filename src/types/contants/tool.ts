@@ -1,3 +1,5 @@
+import type { SortField } from "../interfaces/tool";
+
 export const TOOL_STATUS = {
   active: {
     label: "Active",
@@ -20,3 +22,11 @@ export const TOOL_STATUS = {
 } as const;
 
 export type ToolStatus = keyof typeof TOOL_STATUS;
+
+export const COLUMNS: { label: string; field: SortField }[] = [
+  { label: "Tool", field: "name" },
+  { label: "Department", field: "department" },
+  { label: "Users", field: "users" },
+  { label: "Monthly Cost", field: "monthlyCost" },
+  { label: "Status", field: "status" },
+] as const;
