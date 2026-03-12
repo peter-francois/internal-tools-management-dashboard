@@ -1,4 +1,4 @@
-import type { Tool } from "../types/interfaces/tool";
+import type { Tool } from "../types/interfaces/tool.interface";
 
 export const TOOLS_MOCK: Tool[] = [
   {

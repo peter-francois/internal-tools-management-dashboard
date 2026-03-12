@@ -1,4 +1,4 @@
-import type { SortField } from "../interfaces/tool";
+import type { SortField } from "../interfaces/tool.interface";
 
 export const TOOL_STATUS = {
   active: {

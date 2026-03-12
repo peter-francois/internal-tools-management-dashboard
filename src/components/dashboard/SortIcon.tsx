@@ -1,4 +1,5 @@
-import type { SortField } from "../../types/interfaces/tool";
+import type { SortField } from "../../types/interfaces/tool.interface";
+
 
 interface SortIconProps {
   field: SortField;
