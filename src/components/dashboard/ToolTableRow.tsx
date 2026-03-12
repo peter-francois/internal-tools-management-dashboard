@@ -1,7 +1,6 @@
 import { TOOL_STATUS } from "../../types/contants/tool.constant";
 import type { Tool } from "../../types/interfaces/tool.interface";
 
-
 interface ToolsTableRowProps {
   tool: Tool;
 }
@@ -17,22 +16,22 @@ export default function ToolsTableRow({ tool }: ToolsTableRowProps) {
       <td className="p-4">
         <div className="flex items-center gap-2">
           <div
-            className="flex h-8 w-8 items-center justify-center text-base transition-transform group-hover:scale-110
-              "
+            className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-xl
+              transition-transform group-hover:scale-110"
           >
-            {tool.icon}
+            <img src={tool.icon_url} alt={tool.name} className="h-full w-full object-contain" />
           </div>
           <span className="text-sm font-medium text-gray-800 dark:text-neutral-200">
             {tool.name}
           </span>
         </div>
       </td>
-      <td className="p-4 text-sm text-gray-500 dark:text-neutral-400">{tool.department}</td>
+      <td className="p-4 text-sm text-gray-500 dark:text-neutral-400">{tool.owner_department}</td>
       <td className="p-4 text-sm font-medium text-gray-700 dark:text-neutral-300">
-        {tool.users.toLocaleString()}
+        {tool.active_users_count}
       </td>
       <td className="p-4 text-sm font-medium text-gray-700 dark:text-neutral-300">
-        €{tool.monthlyCost.toLocaleString()}
+        €{tool.monthly_cost}
       </td>
       <td className="p-4">
         <span
