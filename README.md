@@ -179,6 +179,31 @@ Prochaine étape : **Recharts** — choisi pour son API React-native, sa composa
 
 ---
 
+##  🐳 Docker Setup
+
+Cette application peut être déployée facilement avec Docker et Docker Compose.
+
+Dockerfile : build multi-stage (Node → Nginx) avec VITE_API_BASE_URL et routing client via try_files /index.html.
+
+Docker Compose : service front exposé sur le port 80, réseau dédié app-network.
+
+Commandes
+```bash
+# Builder l'image
+docker build --build-arg VITE_API_BASE_URL=https://api.monsite.com -t internal-tools-management-dashboard .
+
+# Lancer le conteneur
+docker run -d -p 80:80 internal-tools-management-dashboard
+
+# Avec Docker Compose
+docker-compose up -d
+
+```
+
+Accessible ensuite sur http://localhost.
+
+---
+
 ## 🔮 Next Steps / Complete App Vision
 
 | Fonctionnalité                                | Priorité |
