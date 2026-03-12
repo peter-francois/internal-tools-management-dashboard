@@ -1,6 +1,6 @@
 import RecentToolsTable from "../components/dashboard/RecentToolsTable";
 import StatCardList from "../components/ui/StatCardList";
-import { NAV_ITEMS } from "../types/contants/navigation";
+import { NAV_ITEMS } from "../types/contants/navigation.constant";
 
 const Dashboard = () => {
   return (

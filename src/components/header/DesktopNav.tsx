@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { NAV_ITEMS } from "../../types/contants/navigation";
 import { navLinkClass } from "../../utils/navLinkClass";
+import { NAV_ITEMS } from "../../types/contants/navigation.constant";
 
 const DesktopNav = () => {
   return (

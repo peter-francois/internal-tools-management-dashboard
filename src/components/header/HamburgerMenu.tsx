@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
-import { NAV_ITEMS } from "../../types/contants/navigation";
 import { navLinkClass } from "../../utils/navLinkClass";
+import { NAV_ITEMS } from "../../types/contants/navigation.constant";
 
 export default function HamburgerMenu() {
   const [open, setOpen] = useState(false);

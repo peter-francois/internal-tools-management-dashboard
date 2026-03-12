@@ -1,6 +1,7 @@
+import { COLUMNS } from "../../types/contants/tool.constant";
+import type { SortDir, SortField } from "../../types/interfaces/tool.interface";
 import SortIcon from "./SortIcon";
-import type { SortField, SortDir } from "../../types/interfaces/tool";
-import { COLUMNS } from "../../types/contants/tool";
+
 
 interface ToolsTableHeadProps {
   sortField: SortField | null;

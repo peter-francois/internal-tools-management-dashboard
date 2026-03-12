@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { NAV_ITEMS } from "../../types/contants/navigation";
 import ZapLogo from "./ZapLogo";
+import { NAV_ITEMS } from "../../types/contants/navigation.constant";
 const LogoAndCompanyName = () => {
   return (
     <NavLink
