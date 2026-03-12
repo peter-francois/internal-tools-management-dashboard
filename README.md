@@ -131,7 +131,19 @@ La sécurité des types est la couche QA principale :
 - **`npm run build`** — vérification complète `tsc` avant tout déploiement
 - **`npm run lint`** — ESLint pour la qualité du code
 
-Les tests unitaires ne sont pas encore implémentés — la prochaine étape serait Jest Testing Library, axé sur les fonctions de mapping et la logique des hooks.
+Deux tests unitaires ont été ajoutés pour le moment :
+
+- `gradient.spec.ts` — vérifie la génération des gradients pour les composants UI
+
+- `navLinkClass.spec.ts` — vérifie la logique des classes CSS pour les liens de navigation
+
+Pour lancer les tests unitaires :
+
+```bash
+npm run test
+```
+
+Les prochains tests couvriront les fonctions de mapping (ex. mapAnaliticsToStatCards) et la logique des hooks, avec Jest + Testing Library.
 
 ---
 
