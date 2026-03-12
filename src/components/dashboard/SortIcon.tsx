@@ -8,7 +8,10 @@ interface SortIconProps {
 
 export default function SortIcon({ field, sortField, sortDir }: SortIconProps) {
   return (
-    <span className={`ml-1 text-xs ${sortField === field ? "text-gray-700 dark:text-neutral-200" : "text-gray-300 dark:text-neutral-600"}`}>
+    <span
+      className={`ml-1 text-xs
+        ${sortField === field ? "text-gray-700 dark:text-neutral-200" : "text-gray-300 dark:text-neutral-600"}`}
+    >
       {sortField === field ? (sortDir === "asc" ? "↑" : "↓") : "↕"}
     </span>
   );
