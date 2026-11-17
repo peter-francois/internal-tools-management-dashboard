@@ -2,6 +2,8 @@
 
 > Dashboard SaaS React/TypeScript pour gérer les outils internes, les budgets et l'utilisation par équipe.
 
+Test technique réalisé en 3 jours (du 10 au 12/03/2026). La page Dashboard est complète ; Tools, Analytics et Settings sont en place dans la navigation, prêtes à être développées.
+
 ---
 
 ## 🚀 Quick Start
@@ -25,22 +27,17 @@ npm run dev
 src/
 ├── api/                  # Appels Axios (un fichier par ressource)
 ├── components/
-│   ├── dashboard/        # Composants spécifiques au Dashboard
-│   ├── tools/            # Composants de la page Tools
-│   ├── analytics/        # Composants de la page Analytics
-│   └── ui/               # Composants partagés (StatCard, Badge, ErrorPage…)
+│   ├── analytics/        # Stat cards (StatCard, StatCardList)
+│   ├── dashboard/        # Tableau des outils récents
+│   ├── header/           # Navigation, menu mobile, dark mode
+│   └── ui/               # Composants partagés (Avatar, Badge, ErrorPage)
 ├── hooks/                # Hooks React Query (useTools, useAnalytics…)
 ├── layouts/              # AppLayout
-├── pages/                # Composants de niveau route
-│   ├── Analytics/
-│   ├── Dashboard/
-│   ├── NotFound/
-│   ├── Settings/
-│   └── Tools/
+├── pages/                # Un composant par route (Dashboard, Tools, Analytics, Settings, NotFound)
 ├── stores/               # useDarkMode Store
 ├── styles/               # index.css
 ├── types/
-│   ├── constants/        # NAV_ITEMS, ERROR_PAGES, TOOL_STATUS…
+│   ├── contants/         # NAV_ITEMS, ERROR_PAGES, TOOL_STATUS…
 │   └── interfaces/       # Interfaces TypeScript (Tool, User, Analytics…)
 ├── utils/                # Fonctions pures + axiosClient, queryClient
 ├── .env.example
@@ -78,9 +75,7 @@ Dashboard → Tools → Analytics → Settings
 ```
 
 - **Dashboard** — Vue KPI (budget, outils actifs, départements, coût/utilisateur) + tableau des outils récents
-- **Tools** — Reste à implémenter.
-- **Analytics** — Reste à implémenter.
-- **Settings** — Reste à implémenter.
+- **Tools**, **Analytics**, **Settings** — routes en place (titre et description), contenu à développer.
 
 La navigation est gérée par React Router avec un `AppLayout` partagé (header sticky + `<Outlet />`).
 La route active est mise en évidence via `navLinkClass({ isActive })`.
@@ -97,7 +92,7 @@ JSON Server → Axios (api/) → React Query (hooks/) → Composants
 
 - **`api/`** — fonctions de fetch typées avec params (`ToolsQueryParams`)
 - **`hooks/`** — wrappers React Query avec `staleTime` et `refetchInterval`
-- **`utils/mapAnalyticsToStatCards`** — transforme la réponse API `Analytics` en `StatCardProps[]`
+- **`utils/mapAnaliticsToStatCards`** — transforme la réponse API `Analytics` en `StatCardProps[]`
 
 **Stratégie de cache :**
 | Donnée | staleTime | refetchInterval |
@@ -159,7 +154,7 @@ Les prochains tests couvriront les fonctions de mapping (ex. mapAnaliticsToStatC
 
 ## 🎯 Design Consistency Approach
 
-Pour le dévelopement futur des autres pages sans maquettes, la cohérence a été assurée par :
+Pour le développement futur des autres pages sans maquettes, la cohérence a été assurée par :
 
 - **CSS `@layer base`** — styles globaux de typographie
 - **`@layer components`** — `.nav-link`, `.nav-link-active`, `.nav-link-mobile`, `.link`
